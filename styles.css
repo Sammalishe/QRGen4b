@@ -1,0 +1,48 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for header and footer */
+header, footer {
+    background-color: #043671;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the main content area */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the input and button */
+.input-container {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+}
+
+button {
+    background-color: #043671;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1ac6ff;
+}
+
+/* Style the QR code container */
+#qr-code-container {
+    margin-top: 20px;
+}
+
+/* Add your custom CSS styles here */
