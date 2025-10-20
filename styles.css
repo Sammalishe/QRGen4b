@@ -1,81 +1,73 @@
-/* Reset default styles */
+/* Reset default margin and padding */
 body, h1, h2, ul, li, a, p {
     margin: 0;
     padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    font-family: inherit;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
 }
 
-/* Global styles */
+/* Apply background gradient */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-header {
-    background-color: #043671;
+    background: linear-gradient(to bottom, #1ac6ff, #043671);
     color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
+}
+
+/* Style header */
+header {
     padding: 20px;
 }
 
+/* Style main content */
 main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Adjust as needed */
 }
 
-h1 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 20px;
-    margin-top: 20px;
-}
-
+/* Style options list */
 ul {
+    list-style-type: none;
     padding: 0;
 }
 
+/* Style individual options */
 li {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
-/* Option styles */
+a {
+    text-decoration: none;
+}
+
 .option {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1ac6ff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option:hover {
+    background-color: #043671;
 }
 
 .option-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .option-description {
-    font-size: 16px;
-}
-
-.option-windows11 {
-    border-color: #0078d4;
-}
-
-/* Footer styles */
-footer {
+    font-size: 18px;
     text-align: center;
+}
+
+/* Footer styling */
+footer {
     margin-top: 20px;
-    padding: 10px 0;
-    background-color: #043671;
-    color: white;
+    padding: 10px;
 }

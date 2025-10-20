@@ -1,26 +1,25 @@
-// JavaScript code for interactivity
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle the "Connect to Airport Free Wi-Fi" button click
+    const connectWifiButton = document.getElementById('connect-wifi');
+    connectWifiButton.addEventListener('click', function() {
+        // Check if the device supports the Wi-Fi settings API
+        if ('wifi' in navigator) {
+            // Define the Wi-Fi network details
+            const wifiConfig = {
+                ssid: '#Airport Free Wi-Fi', // SSID to connect to
+                signalStrength: 100 // Signal strength (percentage)
+            };
 
-document.addEventListener("DOMContentLoaded", function () {
-    const generateButton = document.getElementById("generate-button");
-    const dataInput = document.getElementById("data");
-    const qrCodeImage = document.getElementById("qr-code-image");
-
-    generateButton.addEventListener("click", function () {
-        const data = dataInput.value.trim();
-
-        if (data !== "") {
-            // Clear any existing QR code
-            qrCodeImage.src = "";
-
-            // Generate the QR code
-            const qrcode = new QRCode(qrCodeImage, {
-                text: data,
-                width: 128,
-                height: 128
-            });
-
-            // Set the source of the <img> element to the data URL of the generated QR code
-            qrCodeImage.src = qrcode.toDataURL();
+            // Open the Wi-Fi settings and attempt to connect
+            navigator.wifi.associate(wifiConfig)
+                .then(() => {
+                    console.log('Successfully connected to Wi-Fi.');
+                })
+                .catch(error => {
+                    console.error('Failed to connect to Wi-Fi:', error);
+                });
+        } else {
+            console.error('Wi-Fi settings API is not supported on this device.');
         }
     });
 });
